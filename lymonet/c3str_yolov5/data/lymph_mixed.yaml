@@ -1,0 +1,33 @@
+# COCO 2017 dataset http://cocodataset.org - first 128 training images
+# Train command: python train.py --data coco128.yaml
+# Default dataset location is next to /yolov5:
+#   /parent_folder
+#     /coco128
+#     /yolov5
+
+
+# download command/URL (optional)
+download: ~
+
+# train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
+#train: ./lymph_mixed_dataset/images/train/  # 900 images
+#val: ./lymph_mixed_dataset/images/val/  # 100 images
+#test: ./lymph_mixed_dataset/images/val/  # 128 images
+# train: ['./dataset_unpair/images/train/CDFI', './dataset_unpair/images/train/US']  # 993+1268=2261
+# val: ['./dataset_unpair/images/val/CDFI', './dataset_unpair/images/val/US']  # 500+630=1130
+# test: ['./dataset_unpair/images/test/CDFI', './dataset_unpair/images/test/US']  # 500+630=1130
+
+train: ["/data/tml/lymonet/lymph_node_dataset/images/train/CDFI", "/data/tml/lymonet/lymph_node_dataset/images/train/US"]  # 993+1268=2261
+val: ["/data/tml/lymonet/lymph_node_dataset/images/val/CDFI", "/data/tml/lymonet/lymph_node_dataset/images/val/US"]  # 500+630=1130
+test: ["/data/tml/lymonet/lymph_node_dataset/images/test/CDFI", "/data/tml/lymonet/lymph_node_dataset/images/test/US"]  # 500+630=1130
+
+
+# number of classes
+nc: 3
+
+# class names 训练集数量分别是735  1298  246  173
+#names: ['lymph node','blood flow', 'hilum', 'calcification']  # 删除了4个'space-occupying lesion'和 1个'colliquative necrosis'
+#names: ['lymph_node', 'peripheral_blood_flow', 'eccentric_blood_flow', 'central_blood_flow', 'unknown_blood_flow',
+#    'hilum', 'liquefactive_necrosis', 'space_occupying_lesion', 'calcification']
+# names: ['lymph_node']
+names: ['metastatic', 'inflammatory', 'normal']  # t: 3036   i: 1762   n: 763

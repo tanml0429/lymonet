@@ -1,0 +1,18 @@
+# download command/URL (optional)
+download: ~
+
+
+
+# {'train': {'US': 1268, 'CDFI': 993}, 'test': {'US': 630, 'CDFI': 500}, 'val': {'US': 630, 'CDFI': 500}}
+# US: 2528  CDFI: 1993
+train: ['./dataset_zhengzhuang3/images/train/CDFI', './dataset_zhengzhuang3/images/train/US']  # 993+1268=2261
+val: ['./dataset_zhengzhuang3/images/val/CDFI', './dataset_zhengzhuang3/images/val/US']  # 500+630=1130
+#test: ['./dataset_zhengzhuang3/images/test/CDFI', './dataset_zhengzhuang3/images/test/US']  # 500+630=1130
+test: ['./dataset_zhengzhuang3/images/test/US']  # 500+630=1130
+
+# number of classes
+nc: 3
+
+
+# {'train': {0: 1541, 1: 782, 2: 380}, 'test': {0: 756, 1: 485, 2: 257}, 'val': {0: 739, 1: 495, 2: 126}}
+names: ['metastatic', 'inflammatory', 'normal']  # t: 3036   i: 1762   n: 763

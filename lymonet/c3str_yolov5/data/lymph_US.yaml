@@ -1,0 +1,22 @@
+# COCO 2017 dataset http://cocodataset.org - first 128 training images
+# Train command: python train.py --data coco128.yaml
+# Default dataset location is next to /yolov5:
+#   /parent_folder
+#     /coco128
+#     /yolov5
+
+
+# download command/URL (optional)
+download: ~
+
+# train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
+train: ./dataset_unpair/images/train/US  # 1268 images
+val: ./dataset_unpair/images/val/US  # 630 images
+test: ./dataset_unpair/images/test/US  # 630 images
+# number of classes
+nc: 1
+
+# class names 训练集数量分别是735  1298  246  173
+#names: ['lymph_node', 'peripheral_blood_flow', 'eccentric_blood_flow', 'central_blood_flow', 'unknown_blood_flow',
+#    'hilum', 'liquefactive_necrosis', 'space_occupying_lesion', 'calcification']
+names: ['lymph_node']
