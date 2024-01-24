@@ -10,12 +10,12 @@ https://github.com/tanml0429/LNDNet/archive/refs/heads/main.zip)
 Please **star this project** in the upper right corner and **cite this paper** blow 
 if this project helps you. 
 
-# LNDNet
+# LymoNet
 
 This repository is the source codes for the paper 
-"LNDNet: ".
+"LymoNet: ".
 
-LNDNet (Lymph Node Detection Network) is a .
+LymoNet (Lymph Node Detection Network)
 
 
 ![GA](https://zhangzhengde0225.github.io/images/LNDNet_GA.jpg)
