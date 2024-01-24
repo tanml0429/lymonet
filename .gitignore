@@ -1,12 +1,20 @@
 /data/*
 /outputs/*
 /src/weights/*
+/work_dirs/*
+/datasets/*
+*.png
+/results/*.png
+
+nohup.out
+nohup.out*
 
 *.pt
 /runs/*
 /wandb/*
 
 LymoNet.code-workspace
+./lymonet/configs/c3str_yolov5
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

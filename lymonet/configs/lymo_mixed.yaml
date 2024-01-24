@@ -8,11 +8,11 @@
 
 # download command/URL (optional)
 # download: ~
-
+metadata: "/data/tml/lymonet/lymo_yolo_unclipped/metadata.json"
 # train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
-train: ["/data/tml/lymonet/lymo_yolo/images/train"]
-val: ["/data/tml/lymonet/lymo_yolo/images/val"]
-test: ["/data/tml/lymonet/lymo_yolo/images/test"]
+train: ["/data/tml/lymonet/lymo_yolo_unclipped/images/train"]
+val: ["/data/tml/lymonet/lymo_yolo_unclipped/images/val"]
+test: ["/data/tml/lymonet/lymo_yolo_unclipped/images/test"]
 
 # number of classes
 nc: 3

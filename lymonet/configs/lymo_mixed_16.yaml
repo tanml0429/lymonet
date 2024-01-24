@@ -1,0 +1,24 @@
+# COCO 2017 dataset http://cocodataset.org - first 128 training images
+# Train command: python train.py --data coco128.yaml
+# Default dataset location is next to /yolov5:
+#   /parent_folder
+#     /coco128
+#     /yolov5
+
+
+# download command/URL (optional)
+# download: ~
+metadata: "/data/tml/lymonet/lymo_yolo_unclipped/metadata.json"
+# train and val data as 1) directory: path/images/, 2) file: path/images.txt, or 3) list: [path1/images/, path2/images/]
+train: ["/data/tml/lymonet/lymo_yolo_16/images/train"]
+val: ["/data/tml/lymonet/lymo_yolo_16/images/val"]
+test: ["/data/tml/lymonet/lymo_yolo_16/images/test"]
+
+# number of classes
+nc: 3
+
+#names: ['lymph node','blood flow', 'hilum', 'calcification']  # 删除了4个'space-occupying lesion'和 1个'colliquative necrosis'
+#names: ['lymph_node', 'peripheral_blood_flow', 'eccentric_blood_flow', 'central_blood_flow', 'unknown_blood_flow',
+#    'hilum', 'liquefactive_necrosis', 'space_occupying_lesion', 'calcification']
+# names: ['lymph_node']
+names: ['metastatic', 'inflammatory', 'normal']  #
