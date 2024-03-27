@@ -5,6 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: 当前文件",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+        },
+        {
             "name": "Python: mmtrain",
             "type": "python",
             "request": "launch",
@@ -24,18 +32,9 @@
                 // "/home/tml/VSProjects/LymoNet/lymonet/mmdet/configs/centernet_r18-dcnv2_8xb16-crop512-140e_lymo.py",
                 //"/home/tml/VSProjects/LymoNet/lymonet/mmdet/mmdetection/projects/DiffusionDet/configs/diffusiondet_r50_fpn_500-proposals_1-step_crop-ms-480-800-450k_lymo.py",
                 // "/home/tml/VSProjects/LymoNet/lymonet/mmdet/configs/fcos_r50-caffe_fpn_gn-head_1x_lymo.py",
-                "/home/tml/VSProjects/LymoNet/lymonet/mmdet/configs/yolov3_d53_8xb8-ms-608-273e_lymo.py",
-                "--auto-scale-lr",
+                //"/home/tml/VSProjects/LymoNet/lymonet/mmdet/configs/yolov3_d53_8xb8-ms-608-273e_lymo.py",
+                //"--auto-scale-lr",
             ]
-        },
-        {
-            "name": "Python: 当前文件",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal",
-            "justMyCode": true,
-            
-        }
+        }  
     ]
 }

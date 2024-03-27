@@ -13,59 +13,91 @@ if this project helps you.
 # LymoNet
 
 This repository is the source codes for the paper 
-"LymoNet: ".
+"LymoNet: An Advanced Lymph Node Detection Network for Ultrasound Images".
 
-LymoNet (Lymph Node Detection Network)
+LymoNet (Lymph Node Detection Network) is proposed to detect and classify normal, inflammatory, and metastatic lymph nodes from ultrasound images.
 
 
-![GA](https://zhangzhengde0225.github.io/images/LNDNet_GA.jpg)
-Fig.1 Graphical abstract.
+![GA](GA.jpg)
+Graphical abstract.
+
+# Highlights
+1. LymoNet, a YOLOv8-based model, significantly improving automated lymph node detection from ultrasound images.
+
+2. Utilization of advanced attention mechanisms and medical knowledge embedding to enhance classification accuracy of lymph nodes.
+
+3. LymoNet achieves state-of-the-art performance, demonstrating its potential in clinical applications and beyond.
 
 # Contributions
 
-+ xxx
+1. Enhanced YOLOv8 and YOLOv8-cls with C2fCA and C2fMHSA for superior feature extraction.
 
-## Dataset Sample
+2. Incorporated medical knowledge into YOLOv8-cls for refined classification accuracy.
 
-## Trained Weights
+3. Developed LymoNet-Fusion, combining improved models to achieve state-of-the-art performance.
 
+# Installation
+Get CDNet code and configure the environment, please check out [docs/INSTALL.md](https://github.com/tanml0429/LymoNet/blob/master/docs/INSTALL.md)
 
+# Datasets and trained weights
+Download datasets and trained weights, please check out [docs/DATASETS.md](https://github.com/tanml0429/LymoNet/blob/master/docs/DATASETS.md)
 
 # Quick Start
-## Detect Lymph Node on Untrasound Images
+## Train
+
+Once you get the LymoNet code, configure the environment and download the dataset, just type:
+```
+python train.py 
+```
+The training results and weights will be saved in runs/detect/directory.
+
+The main optional arguments:
+```
+--model "x.yaml"
+--data  "xx.yaml"
+--device "0, 1"  # cpu or gpu id
+--imgsz 640 
+--batch 32 
+--epochs 300 
+```
 
 
-## Train Network
-
-
+## Val
+```
+python val.py
+```
+The main optional arguments:
+```
+--model "xx.pt"
+--data  "xx.yaml"
+--device "0, 1"  # cpu or gpu id
+--imgsz 640 
+--batch 32
+--fine_cls False
+```
 
 # Contributors
-CDNet is authored by Zhengde Zhang, Menglu Tan, Zhicai Lan, Haichun Liu, Ling Pei and Wenxian Yu.
+
+LymoNet is authored by Menglu Tan, Yaxin Hou, Zhengde Zhang, Guangdong Zhan, Zijin Zeng, Zunduo Zhao, Hanxue Zhao, and Lin Feng.
 
 Currently, it is maintained by Menglu Tan (tanml0429@gmail.com).
 
 # Acknowledgement
- 
-We are very grateful to the 
-[yolov5](https://github.com/ultralytics/yolov5) project
-for the benchmark detection algorithm.
+
+This work was supported by the Beijing Municipal Fund for Distinguished Young Scholars (Grand No. JQ22022), National Key R&D Program of China (Grant No. 2022YFF1502000), and the Beijing Hospitals Authority Clinical Medicine Development of Special Funding Support (Grant No. ZYLX202104). 
+
+We are very grateful to the [ultralytics](https://github.com/ultralytics/ultralytics) project for the benchmark detection algorithm.
 
 
 
 # Citation
 ```
-@article{LNDNet,
-author={Zheng-De Zhang, Meng-Lu Tan, Zhi-Cai Lan, Hai-Chun Liu, Ling Pei and Wen-Xian Yu},
-title={CDNet: a real-time and robust crosswalk detection network on Jetson nano based on YOLOv5},
-Journal={Neural Computing and Applications}, 
-Year={2022},
-DOI={10.1007/s00521-022-07007-9},
-}
+
 ```
 
 
 # License
-LNDNet is freely available for free non-commercial use, and may be redistributed under these conditions.
+LymoNet is freely available for free non-commercial use, and may be redistributed under these conditions. For commercial queries, please drop an e-mail at tanml0429@gmail.com. We will send the detail agreement to you.
 
 
 

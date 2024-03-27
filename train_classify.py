@@ -21,8 +21,8 @@ def run(args):
     model_name_or_cfg = kwargs.pop('model')
     model_weights = kwargs.pop('weights', None)
     # LYMO.apply_improvements()
-    # model = LYMO(model_name_or_cfg, task=args.task)
-    model = YOLO(model_name_or_cfg, task=args.task)
+    model = LYMO(model_name_or_cfg, task=args.task)
+    # model = YOLO(model_name_or_cfg, task=args.task)
 
     # LYMO.apply_improvements()
 
@@ -51,28 +51,25 @@ def run(args):
 @dataclass
 class Args:
     mode: str = 'train'
-    # model: str =  f'{here}/lymonet/configs/yolov8s.yaml'
-    model: str = "yolov8s-cls.yaml"
-    weights: str = 'yolov8s-cls.pt'
+    model: str =  f'{here}/lymonet/configs/classification/yolov8s-cls-lymo_CA_MHSA.yaml'
+    # model: str = f"yolov8s-cls.yaml"
+    # weights: str = 'yolov8s-cls.pt'
+    # data: str = '/data/tml/lymonet/lymo_cls_mini'
     data: str = '/data/tml/lymonet/lymo_yolo_aug1.1'
     # data: str = 'mnist'
     epochs: int = 300
-    batch: int = 16
+    batch: int = 80
     imgsz: int = 640
-    workers: int = 0
+    workers: int = 20
     device: str = '0'  # GPU id 
     name: str = 'yolov8s_class'
     patience: int = 0
     # dropout: float = 0.5
     task: str = 'classify'
-    # freeze: str = '0'  # freeze layer 0,1,2,3 etc
-    # freeze: str = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22"
-    # box: float = 0.0  # 7.5 bbox loss gain  
-    # cls: float = 0.0  # 0.5 cls loss gain
-    # dfl: float = 0.0  # 1.5 dfl loss gain
     # content_loss_gain: float = 1.0
     # texture_loss_gain: float = 1.0
-    # augment_in_training: bool = False
+    cls_loss_gain: float = 1.0
+    echo_loss_gain: float = 0.0
     
  
 if __name__ == '__main__':

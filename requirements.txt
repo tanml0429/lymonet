@@ -1,14 +1,17 @@
 # pip install -r requirements.txt
 # conda install --file requrements.txt
 
-opencv-python
-numpy
-scipy
-pyyaml
-tqdm
-matplotlib
-pandas
+opencv-python>=4.9
+numpy>=1.26
+scipy>=1.12
+pyYAML>=6.0
+tqdm>=4.66
+matplotlib>=3.8
+pandas>=2.2
+tensorboard>=2.15
 seaborn
-tensorboard
-# torch>=1.7.0  # 查看pytorch官网查看安装命令
+hepai
+timm  # for SwimT
+einops  # for BiLevelRountingAttension
+
 

@@ -114,4 +114,15 @@ def plot_bboxes(img, bboxes):
         img = dm.general.plot_one_box_trace_pose_status(bbox, img)
     return img
             
+
+def restore_org_img(img, grey=128):
+    """从使用灰色背景的图片中恢复出原始的图片"""
+    mask = np.all(img != [grey, grey, grey], axis=-1)  # 必须是三个通道都不是128才是mask
+    coords = np.column_stack(np.where(mask))
+
+    top_left = coords.min(axis=0)
+    bottom_right = coords.max(axis=0)
+
+    org_img = img[top_left[0]:bottom_right[0], top_left[1]:bottom_right[1], :]
+    return org_img
             

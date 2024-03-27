@@ -9,11 +9,17 @@ from lymonet.apis.yolov8_api import (
     DetectionTrainer, DetectionValidator, DetectionPredictor, RANK,
     de_parallel,
     )
+
+from lymonet.apis.lymo_api import LYMO_DEFAULT_CFG
+
 from .nn.tasks import LymoDetectionModel
 from .val import LymoDetectionValidator
 from .predict import LymoDetectionPredictor
 from .dataset import LYMODataset, build_lymo_dataset
 from .utils.utils import preprocess_correspondence
+from .fine_cls_model.classification_validator import LymoClassificationValidator
+from .fine_cls_model.clssification_model import LymoClassificationModel
+from .fine_cls_model.classify_trainner import LymoClassificationTrainer
 
 
 class LYMO(YOLO):
@@ -28,6 +34,10 @@ class LYMO(YOLO):
         task_map['detect']['trainer'] = LymoDetectionTrainer
         task_map['detect']['validator'] = LymoDetectionValidator
         task_map['detect']['predictor'] = LymoDetectionPredictor
+
+        task_map["classify"]["model"] = LymoClassificationModel
+        task_map["classify"]["trainer"] = LymoClassificationTrainer
+        task_map["classify"]["validator"] = LymoClassificationValidator
         return task_map
     
     
@@ -36,18 +46,19 @@ class LYMO(YOLO):
         from .nn.nn import ResBlock_CBAM, CBAM, ChannelAttentionModule, SpatialAttentionModule, RecoveryBlock
         # globals().update(locals())
         globals()['RecoveryBlock'] = RecoveryBlock
+
+        from lymonet.apis.yolov8_api import BaseValidator
+        from ..ultralytics.ultralytics.engine import validator
+        from .cfg import get_cfg
+        validator.get_cfg = get_cfg
+
         print('apply_improvements')
+
 
 
 class LymoDetectionTrainer(DetectionTrainer):
 
-    def __init__(self, cfg=None, overrides=None, _callbacks=None):
-        content_loss_gain = overrides.pop('content_loss_gain', 0.1)
-        texture_loss_gain = overrides.pop('texture_loss_gain', 0.1)
-        if cfg is None:
-            DEFAULT_CFG_DICT["content_loss_gain"] = content_loss_gain
-            DEFAULT_CFG_DICT["texture_loss_gain"] = texture_loss_gain
-            cfg = IterableSimpleNamespace(**DEFAULT_CFG_DICT)
+    def __init__(self, cfg=LYMO_DEFAULT_CFG, overrides=None, _callbacks=None):
         super().__init__(cfg, overrides, _callbacks)
 
     def get_model(self, cfg=None, weights=None, verbose=True):

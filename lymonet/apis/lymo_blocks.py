@@ -18,3 +18,5 @@ from ..improvements.nn.detect_head import Detect, DetectWithRecoveryBlock
 
 from ..improvements.loss.loss import LymoDetectionLoss
 
+from ..improvements.fine_cls_model.classify_head import Classify
+

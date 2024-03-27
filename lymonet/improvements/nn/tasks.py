@@ -28,6 +28,7 @@ from copy import deepcopy
 import torch
 import torch.nn as nn
 import contextlib
+from lymonet.apis import lymo_blocks
 
 LOGGER = dm.get_logger('tasks.py')
 
@@ -139,7 +140,6 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
     layers, save, c2 = [], [], ch[-1]  # layers, savelist, ch out
     for i, (f, n, m, args) in enumerate(d['backbone'] + d['head']):  # from, number, module, args
         if 'lymo.' in m:  # [-1, 3, lymo.C2f_MHSA, [1024, True]]
-            from lymonet.apis import lymo_blocks
             block_name = m[5:]  # C2f_MHSA
             m = getattr(lymo_blocks, block_name)
         else:
@@ -150,7 +150,7 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
                 with contextlib.suppress(ValueError):
                     args[j] = locals()[a] if a in locals() else ast.literal_eval(a)
         n = n_ = max(round(n * depth), 1) if n > 1 else n  # depth gain
-        if m in (Classify, Conv, ConvTranspose, GhostConv, Bottleneck, GhostBottleneck, SPP, SPPF, DWConv, Focus,
+        if m in (lymo_blocks.Classify, Classify, Conv, ConvTranspose, GhostConv, Bottleneck, GhostBottleneck, SPP, SPPF, DWConv, Focus,
                  BottleneckCSP, C1, C2, C2f, C3, C3TR, C3Ghost, nn.ConvTranspose2d, DWConvTranspose2d, C3x, RepC3, 
                  C2fCA, C2fST, C2f_MHSA, GSConv, VoVGSCSP, CARAFE, ODConv2d, PatchEmbed, PatchMerging, SwinStage):
             c1, c2 = ch[f], args[0]  # for C2f_MHSA, c1=上一层, c2=1024

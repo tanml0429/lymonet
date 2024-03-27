@@ -53,9 +53,9 @@ class Args:
     data: str = f'{here}/lymonet/configs/lymo_mixed.yaml'
     # data: str = f'{here}/lymonet/configs/lymo_minimal.yaml'
     epochs: int = 300
-    batch: int = 1
+    batch: int = 32
     imgsz: int = 640
-    workers: int = 1
+    workers: int = 32
     device: str = '0'  # GPU id 
     name: str = 'LYMO_MHSA_CA'
     patience: int = 0
@@ -69,7 +69,7 @@ class Args:
     # content_loss_gain: float = 0.0
     # texture_loss_gain: float = 0.0
     # augment_in_training: bool = True  # Default True, Indicates whether to augment in training
-    # load_correspondence: bool = False  # Default False, Indicates whether to load correspondence images, need `metadata.json` file in YOLO dataset
+    load_correspondence: bool = False  # Default False, Indicates whether to load correspondence images, need `metadata.json` file in YOLO dataset
     
  
 if __name__ == '__main__':

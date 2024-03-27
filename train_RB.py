@@ -74,4 +74,6 @@ class Args:
  
 if __name__ == '__main__':
     args = hai.parse_args_into_dataclasses(Args)
+    # print(f'args: {args}')
+    # exit()
     run(args)

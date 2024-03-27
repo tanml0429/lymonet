@@ -29,35 +29,36 @@ def run(args):
     # results = model.train(**kwargs)
 
     # Evaluate the model's performance on the validation set
-    results = model.val()  # results是validator.metrics
+    results = model.val(data=args.data, fine_cls=args.fine_cls)  # results是validator.metrics
     print(results)
 
     # Perform object detection on an image using the model
-    results = model(f'{here}/lymonet/data/scripts/image.png')
-    print(results)
+    # results = model(f'{here}/lymonet/data/scripts/image.png')
+    # print(results)
 
     # Export the model to ONNX format
     # success = model.export(format='onnx')
 
 @dataclass
 class Args:
-    model: str =  '/home/tml/VSProjects/LymoNet/runs/detect/8s_CA/weights/best.pt'
+    model: str =  '/home/tml/VSProjects/lymonet/runs/detect/8s_1MHSA_CA/weights/best.pt'
     mode: str = 'val'
     val: bool = True
     # model: str =  f'{here}/lymonet/configs/yolov8s_1MHSA_CA.yaml'
     # model: str = "yolov8x.yaml"
     # weights: str = 'yolov8n.pt'
-    data: str = f'{here}/lymonet/configs/lymo_mixed2.yaml'
+    data: str = f'{here}/lymonet/configs/lymo_mixed.yaml'
     split: str = 'val'
     # epochs: int = 300
-    batch: int = 1
+    batch: int = 16
     imgsz: int = 640
-    workers: int = 16
-    device: str = '1'  # GPU id 
+    workers: int = 80
+    device: str = '0'  # GPU id 
     project: str = 'runs/val'
     name: str = 'lymonet'
     # patience: int = 0
-    # dropout: float = 0.5
+    # dropout: float = 0.51
+    fine_cls: str = True  # 是否使用精细分类模型
     
  
 if __name__ == '__main__':

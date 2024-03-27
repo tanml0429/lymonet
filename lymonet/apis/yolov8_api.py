@@ -18,6 +18,7 @@ from ..ultralytics.ultralytics.nn.tasks import (
     make_divisible,
     colorstr,
     scale_img,
+    ClassificationModel,
     )
 
 from ..ultralytics.ultralytics.nn.modules import (AIFI, C1, C2, C3, C3TR, SPP, SPPF, Bottleneck, BottleneckCSP, C2f, C3Ghost, C3x,
@@ -42,6 +43,8 @@ from ..ultralytics.ultralytics.utils import (
     DEFAULT_CFG,
     DEFAULT_CFG_DICT,
     IterableSimpleNamespace,
+    callbacks,
+    ops,
     )
 
 from ..ultralytics.ultralytics.utils.torch_utils import (
@@ -89,4 +92,32 @@ from ..ultralytics.ultralytics.data.augment import (
 from ..ultralytics.ultralytics.utils.metrics import (
     bbox_iou,
     bbox_ioa,
+    ClassifyMetrics,
+    ConfusionMatrix,
+    ap_per_class,
+    compute_ap,
+    plot_mc_curve,
+    plot_pr_curve,
+    smooth,
+    DetMetrics,
 )
+
+
+from ..ultralytics.ultralytics.models.yolo.classify.val import (
+    ClassificationValidator,
+    )
+
+from ..ultralytics.ultralytics.models.yolo.classify.train import (
+    ClassificationTrainer
+    )
+
+from ..ultralytics.ultralytics.models.yolo.classify.predict import (
+    ClassificationPredictor
+    )
+
+from ..ultralytics.ultralytics.engine.validator import (
+    BaseValidator,
+)
+
+from ..ultralytics.ultralytics.cfg import get_save_dir
+from ..ultralytics.ultralytics.utils.checks import check_imgsz
