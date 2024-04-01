@@ -43,6 +43,22 @@ Get CDNet code and configure the environment, please check out [docs/INSTALL.md]
 Download datasets and trained weights, please check out [docs/DATASETS.md](https://github.com/tanml0429/LymoNet/blob/master/docs/DATASETS.md)
 
 # Quick Start
+
+## Validation
+```
+python val.py
+```
+The main optional arguments:
+```
+--model "xx.pt"
+--data  "xx.yaml"
+--device "0, 1"  # cpu or gpu id
+--imgsz 640 
+--batch 32
+--fine_cls False
+```
+
+
 ## Train
 
 Once you get the LymoNet code, configure the environment and download the dataset, just type:
@@ -61,20 +77,6 @@ The main optional arguments:
 --epochs 300 
 ```
 
-
-## Val
-```
-python val.py
-```
-The main optional arguments:
-```
---model "xx.pt"
---data  "xx.yaml"
---device "0, 1"  # cpu or gpu id
---imgsz 640 
---batch 32
---fine_cls False
-```
 
 # Contributors
 
