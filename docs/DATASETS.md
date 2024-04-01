@@ -6,7 +6,7 @@ Here, we provide validation data.
 
 ## Validation data
 + Download from [Baidu Pan](https://pan.baidu.com/s/1uUvv-28HP99pHenotgaqOQ), passwd: **w1up**
-+ Download from [Google Drive](https://drive.google.com/).
++ Download from [Google Drive](https://drive.google.com/file/d/1UXSmwmgd65vQqVCBTQ9QFZQExheKMTCg/view?usp=share_link).
 
 **Notes**
 
@@ -35,6 +35,6 @@ XC YC W H in terms of percentage.
 
 The improved SOTA trained weight is provided.
 + Download from [Baidu Pan](https://pan.baidu.com/s/1FIkvvi19JxOAKioj7AIP6w), passwd: **hbto**
-+ Download from [Google Drive](https://drive.google.com/).
++ Download from [Google Drive](https://drive.google.com/file/d/1663fu4vjoXhvN_2rzh2z7mONcgYPx93n/view?usp=share_link).
 
 
