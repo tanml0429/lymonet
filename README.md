@@ -5,7 +5,7 @@ https://github.com/tanml0429/LNDNet/issues)
 [![Datasets](https://img.shields.io/static/v1?label=Download&message=source_code&color=orange)](
 https://github.com/tanml0429/LNDNet/archive/refs/heads/main.zip)
 
-#### English | [简体中文](https://github.com/tanml0429/LNDNet/blob/main/docs/README_zh_cn.md)
+#### English | [简体中文](https://github.com/tanml0429/LymoNet/blob/main/docs/README_zh_cn.md)
 
 Please **star this project** in the upper right corner and **cite this paper** blow 
 if this project helps you. 
@@ -18,7 +18,7 @@ This repository is the source codes for the paper
 LymoNet (Lymph Node Detection Network) is proposed to detect and classify normal, inflammatory, and metastatic lymph nodes from ultrasound images.
 
 
-![GA](GA.jpg)
+![GA](https://github.com/tanml0429/LymoNet/blob/master/docs/GA.jpg)
 Graphical abstract.
 
 # Highlights

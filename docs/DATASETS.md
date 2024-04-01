@@ -5,7 +5,7 @@ The lymph node dataset contains 3090 images for train, 685 images for validation
 Here, we provide validation data.
 
 ## Validation data
-+ Download from [Baidu Pan](https://pan.baidu.com/), passwd: ** **
++ Download from [Baidu Pan](https://pan.baidu.com/s/1uUvv-28HP99pHenotgaqOQ), passwd: **w1up**
 + Download from [Google Drive](https://drive.google.com/).
 
 **Notes**
@@ -34,7 +34,7 @@ XC YC W H in terms of percentage.
 # Trained weight
 
 The improved SOTA trained weight is provided.
-+ Download from [Baidu Pan](https://pan.baidu.com/), passwd: ** **
++ Download from [Baidu Pan](https://pan.baidu.com/s/1FIkvvi19JxOAKioj7AIP6w), passwd: **hbto**
 + Download from [Google Drive](https://drive.google.com/).
 
 
