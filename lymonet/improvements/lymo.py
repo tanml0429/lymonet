@@ -48,11 +48,11 @@ class LYMO(YOLO):
         globals()['RecoveryBlock'] = RecoveryBlock
 
         from lymonet.apis.yolov8_api import BaseValidator
-        from ..ultralytics.ultralytics.engine import validator
+        # from ..ultralytics.ultralytics.engine import validator
         from .cfg import get_cfg
-        validator.get_cfg = get_cfg
+        # validator.get_cfg = get_cfg
 
-        print('apply_improvements')
+        # print('apply_improvements')
 
 
 

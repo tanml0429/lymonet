@@ -17,8 +17,8 @@ This repository is the source codes for the paper
 
 LymoNet (Lymph Node Detection Network) is proposed to detect and classify normal, inflammatory, and metastatic lymph nodes from ultrasound images.
 
+![GA](https://github.com/tanml0429/lymonet/blob/main/docs/GA.jpg)
 
-![GA](https://github.com/tanml0429/LymoNet/blob/master/docs/GA.jpg)
 Graphical abstract.
 
 # Highlights

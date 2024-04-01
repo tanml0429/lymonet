@@ -1,4 +1,7 @@
 
+from typing import Dict, Union
+from types import SimpleNamespace
+from pathlib import Path
 import copy
 from lymonet.apis.yolov8_api import (
     IterableSimpleNamespace,
@@ -18,7 +21,10 @@ LYMO_DEFAULT_CFG_DICT['fine_cls'] = False  # 是否使用精细分类模型
 
 LYMO_DEFAULT_CFG = IterableSimpleNamespace(**LYMO_DEFAULT_CFG_DICT)
 
-from ...ultralytics.ultralytics.cfg import *
+from lymonet.apis.yolov8_api import (
+    cfg2dict, check_dict_alignment, LOGGER,
+    CFG_FLOAT_KEYS, CFG_FRACTION_KEYS, CFG_INT_KEYS, CFG_BOOL_KEYS,
+)
 
 def get_cfg(cfg: Union[str, Path, Dict, SimpleNamespace] = LYMO_DEFAULT_CFG_DICT, overrides: Dict = None):
     """

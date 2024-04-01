@@ -9,7 +9,7 @@
 
  LymoNet(淋巴结检测网络)被提出用于从超声图像中检测和分类正常、炎症和转移性淋巴结。
 
-![GA](https://github.com/tanml0429/LymoNet/blob/master/docs/GA.jpg)
+![GA](https://github.com/tanml0429/lymonet/blob/main/docs/GA.jpg)
 
 图形摘要
 
