@@ -1,9 +1,9 @@
-[![Stars](https://img.shields.io/github/stars/tanml0429/LNDNet)](
-https://github.com/tanml0429/LNDNet)
-[![Open issue](https://img.shields.io/github/issues/tanml0429/LNDNet)](
-https://github.com/tanml0429/LNDNet/issues)
+[![Stars](https://img.shields.io/github/stars/tanml0429/lymonet)](
+https://github.com/tanml0429/lymonet)
+[![Open issue](https://img.shields.io/github/issues/tanml0429/lymonet)](
+https://github.com/tanml0429/lymonet/issues)
 [![Datasets](https://img.shields.io/static/v1?label=Download&message=source_code&color=orange)](
-https://github.com/tanml0429/LNDNet/archive/refs/heads/main.zip)
+https://github.com/tanml0429/lymonet/archive/refs/heads/main.zip)
 
 #### English | [简体中文](https://github.com/tanml0429/LymoNet/blob/main/docs/README_zh_cn.md)
 
